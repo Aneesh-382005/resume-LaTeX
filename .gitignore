@@ -1,0 +1,16 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Keep generated repository PDF tracked; ignore other dist outputs
+dist/*
+!dist/Aneesh_Grover_Resume.pdf
