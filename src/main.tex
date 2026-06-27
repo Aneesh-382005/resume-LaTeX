@@ -1,0 +1,219 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\textwidth}{1.25in}
+\addtolength{\topmargin}{-.8in}
+\addtolength{\textheight}{1.55in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\linkicon}{\raisebox{-0.1em}{\faLink}}
+
+\newcommand{\clickable}[2]{%
+  \href{#1}{#2\ \linkicon}%
+}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Aneesh Grover} \\ \vspace{1pt}
+    
+    \href{mailto:agrover@rockets.utoledo.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{agrover@rockets.utoledo.edu}} ~ 
+    \href{https://www.linkedin.com/in/aneesh-grover/}{\raisebox{-0.2\height}\faLinkedin\ \underline{LinkedIn}} ~
+    \href{https://github.com/Aneesh-382005}{\raisebox{-0.2\height}\faGithub\ \underline{GitHub}} ~
+    \href{https://www.aneeshgrover.me/}{\raisebox{-0.2\height}\faGlobe\ \underline{Website}}
+\end{center}
+
+
+
+
+%-----------EXPERIENCE-----------
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+\resumeSubheading
+    {\clickable{https://timetable.acmthapar.in/}{AcademicAlly}}{July 2024 -- August 2025}
+    {Founding Developer -- ACM Thapar Society}{{\hfill\small\textcolor{Gray}{\textbf{React, Python, Pandas, Openpyxl, BeautifulSoup}}}}
+    \resumeItemListStart
+        \resumeItem{\textbf{Served 10,000+ students} by developing a responsive timetable portal for fast, reliable class schedule lookup.}
+        \resumeItem{Built ETL pipelines to transform and validate \textbf{50,000+ Excel rows} into optimized JSON datasets, implementing custom error handling that reduced parsing failures by \textbf{95\%}.}
+        \resumeItem{Supported deployment and maintenance of the \textbf{\href{https://timetable.acmthapar.in/}{live portal}}, coordinating with team members.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+
+%-----------PROJECTS-----------
+
+
+\section{Projects}
+\resumeSubHeadingListStart
+
+
+\resumeProjectHeading
+  {\textbf{\clickable{https://github.com/Focus-Board}{FocusBoard - Whiteboard Task Capture System}}}
+  {\hfill\small\textcolor{Gray}{Kotlin, FastAPI, CRAFT, TrOCR, Phi-3 Mini, TFLite}}
+\resumeItemListStart
+  \resumeItem{Built the Android app in Kotlin with ML Kit document scanning and an experimental \textbf{on-device YOLOv26n/TFLite} whiteboard detector, chosen for mobile size constraints.}
+  \resumeItem{Engineered a \textbf{3-stage OCR pipeline} using CRAFT for line segmentation, TrOCR for transcription, and Phi-3 Mini for structured calendar JSON generation from handwritten input.}
+  \resumeItem{Designed per-device request queues to serialize uploads, preventing concurrent TrOCR worker spawning and \textbf{eliminating cross-device race conditions} under simultaneous load.}
+  \resumeItem{Returned structured JSON to the app for user approval before committing tasks to the shared E Ink display.}
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{\clickable{https://github.com/Aneesh-382005/campus-compute}{Campus-Compute - Distributed Compute Framework}}}
+  {\hfill\small\textcolor{Gray}{Python, FastAPI, WebSockets, Docker}}
+\resumeItemListStart
+  \resumeItem{Architected a LAN-distributed compute system with a centralized coordinator and worker nodes, enabling automatic discovery and reconnect handling.}
+  \resumeItem{Designed a capability-aware scheduler using CPU, RAM, and GPU metadata to optimize task placement across nodes.}
+  \resumeItem{Built a real-time WebSocket dashboard for cluster telemetry, job orchestration, and containerized workload execution.}
+\resumeItemListEnd
+
+
+
+\resumeProjectHeading
+  {\textbf{\clickable{https://mcp.aneeshgrover.me/}{folio.mcp - Personal MCP Server}}}
+  {\hfill\small\textcolor{Gray}{TypeScript, Cloudflare Workers, Hono, MCP SDK}}
+\resumeItemListStart
+  \resumeItem{Built a remote MCP server on Cloudflare Workers exposing GitHub activity, portfolio data, and an LLM-invocable contact tool.}
+  \resumeItem{Added a KV layer for GitHub response caching with TTLs and IP-based rate limiting on the contact tool to prevent abuse.}
+  \resumeItem{A simple companion frontend at \textbf{\clickable{https://mcp.aneeshgrover.me/}{mcp.aneeshgrover.me}} with dynamic tool discovery; automated deploys via GitHub Actions.}
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{\clickable{https://github.com/kshitiz510/patch-it}{PatchIt - Civic Infrastructure Monitoring}}}%
+  {\hfill\small\textcolor{Gray}{PyTorch, YOLO, Depth-Anything-V2}}
+\resumeItemListStart
+  \resumeItem{Co-led a crowdsourced platform with citizens and contractors to streamline reporting and resolution of road infrastructure issues.}
+  \resumeItem{Built a YOLO-based pothole detection pipeline achieving \textbf{85.8\% precision} and \textbf{81.7\% mAP@50}, integrating depth estimation for 3D geometry and repair cost estimation.}
+  \resumeItem{Runner-up (Open Innovation) at \textbf{NVIDIA SatHack Hackathon} among 1500+ participants.}
+\resumeItemListEnd
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:} Python, Java, C++, JavaScript, TypeScript, SQL \\
+    \textbf{Software Engineering \& Systems:} REST APIs, distributed systems, asynchronous processing, WebSockets, system design \\
+    \textbf{Machine Learning:} PyTorch, TensorFlow, transformers, vector databases, RAG \\
+    \textbf{Infrastructure \& Tools:} Docker, Git, CI/CD, Supabase, OpenCV, CUDA}}
+\end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {University of Toledo}{Toledo, OH}
+  {Bachelor of Science in Computer Science and Engineering}{GPA: 3.5/4.0}
+
+
+\resumeSubHeadingListEnd
+
+%-----------LEADERSHIP & INVOLVEMENT-----------
+\section{Leadership \& Involvement}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+  {Association for Computing Machinery (ACM)}{Nov 2023 -- Present}
+  {Executive Board Member \& Machine Learning Bootcamp Lead}{}
+  
+  \resumeItemListStart
+    \resumeItem{Organized Hacklipse 2024, ACM Thapar’s flagship hackathon, coordinating operations for \textbf{300+ participants}.}
+    \resumeItem{Mentored \textbf{100+ students} through ACM’s Machine Learning Bootcamp by designing curriculum and leading weekly technical sessions.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+  \resumeItemListStart
+    \resumeItem{ Secured \textbf{runner-up} in \textbf{Open Innovation Category} at \textbf{NVIDIA’s SatHack}, competing against \textbf{1500+ participants}.}
+    \resumeItem{Awarded Best Use Case for AcademicAlly at ACM Projectathon 2024.}
+  \resumeItemListEnd
+
+
+
+
+\end{document}
+
+
