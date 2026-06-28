@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Ensure dist directory exists
         run: mkdir -p dist
@@ -44,6 +46,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main
           git add dist/Aneesh_Grover_Resume.pdf
           if git diff --cached --quiet; then
             echo "No PDF changes to commit."
