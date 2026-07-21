@@ -119,7 +119,7 @@
   {\textbf{\clickable{https://github.com/Focus-Board}{FocusBoard - Whiteboard Task Capture System}}}
   {\hfill\small\textcolor{Gray}{Kotlin, FastAPI, CRAFT, TrOCR, Phi-3 Mini, TFLite}}
 \resumeItemListStart
-  \resumeItem{Built the Android app in Kotlin with ML Kit document scanning and an experimental \textbf{on-device YOLOv26n/TFLite} whiteboard detector, chosen for mobile size constraints.}
+  \resumeItem{Developed the Android app in Kotlin with ML Kit document scanning and an experimental \textbf{on-device YOLOv26n/TFLite} whiteboard detector, chosen for mobile size constraints.}
   \resumeItem{Engineered a \textbf{3-stage OCR pipeline} using CRAFT for line segmentation, TrOCR for transcription, and Phi-3 Mini for structured calendar JSON generation from handwritten input.}
   \resumeItem{Designed per-device request queues to serialize uploads, preventing concurrent TrOCR worker spawning and \textbf{eliminating cross-device race conditions} under simultaneous load.}
   \resumeItem{Returned structured JSON to the app for user approval before committing tasks to the shared E Ink display.}
@@ -132,7 +132,7 @@
 \resumeItemListStart
   \resumeItem{Architected a LAN-distributed compute system with a centralized coordinator and worker nodes, enabling automatic discovery and reconnect handling.}
   \resumeItem{Designed a capability-aware scheduler using CPU, RAM, and GPU metadata to optimize task placement across nodes.}
-  \resumeItem{Built a real-time WebSocket dashboard for cluster telemetry, job orchestration, and containerized workload execution.}
+  \resumeItem{Implemented a real-time WebSocket dashboard for cluster telemetry, job orchestration, and containerized workload execution.}
 \resumeItemListEnd
 
 
@@ -141,19 +141,19 @@
   {\textbf{\clickable{https://mcp.aneeshgrover.me/}{folio.mcp - Personal MCP Server}}}
   {\hfill\small\textcolor{Gray}{TypeScript, Cloudflare Workers, Hono, MCP SDK}}
 \resumeItemListStart
-  \resumeItem{Built a remote MCP server on Cloudflare Workers exposing GitHub activity, portfolio data, and an LLM-invocable contact tool.}
+  \resumeItem{Deployed a remote MCP server on Cloudflare Workers exposing GitHub activity, portfolio data, and an LLM-invocable contact tool.}
   \resumeItem{Added a KV layer for GitHub response caching with TTLs and IP-based rate limiting on the contact tool to prevent abuse.}
-  \resumeItem{A simple companion frontend at \textbf{\clickable{https://mcp.aneeshgrover.me/}{mcp.aneeshgrover.me}} with dynamic tool discovery; automated deploys via GitHub Actions.}
+  \resumeItem{Shipped a companion frontend at \textbf{\clickable{https://mcp.aneeshgrover.me/}{mcp.aneeshgrover.me}} with dynamic tool discovery; automated deploys via GitHub Actions.}
 \resumeItemListEnd
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://github.com/kshitiz510/patch-it}{PatchIt - Civic Infrastructure Monitoring}}}%
-  {\hfill\small\textcolor{Gray}{PyTorch, YOLO, Depth-Anything-V2}}
+  {\textbf{\clickable{https://github.com/Aneesh-382005/Orbital}{Orbital - Cloud IDE Control Plane}}}%
+  {\hfill\small\textcolor{Gray}{Go, Docker, JWT, REST APIs}}
 \resumeItemListStart
-  \resumeItem{Co-led a crowdsourced platform with citizens and contractors to streamline reporting and resolution of road infrastructure issues.}
-  \resumeItem{Built a YOLO-based pothole detection pipeline achieving \textbf{85.8\% precision} and \textbf{81.7\% mAP@50}, integrating depth estimation for 3D geometry and repair cost estimation.}
-  \resumeItem{Runner-up (Open Innovation) at \textbf{NVIDIA SatHack Hackathon} among 1500+ participants.}
+  \resumeItem{Architected a control plane in Go that provisions isolated VS Code workspaces on demand via a Dockerized provisioner.}
+  \resumeItem{Implemented a reconciler loop to track workspace state and recover from provisioning failures without manual intervention.}
+  \resumeItem{Secured the API surface with JWT-based authentication and a layered internal package structure separating auth, storage, and orchestration concerns.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -166,10 +166,11 @@
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
-    \textbf{Languages:} Python, Java, C++, JavaScript, TypeScript, SQL \\
-    \textbf{Software Engineering \& Systems:} REST APIs, distributed systems, asynchronous processing, WebSockets, system design \\
-    \textbf{Machine Learning:} PyTorch, TensorFlow, transformers, vector databases, RAG \\
-    \textbf{Infrastructure \& Tools:} Docker, Git, CI/CD, Supabase, OpenCV, CUDA}}
+    \textbf{Languages:} Python, Go, Java, C++, JavaScript, TypeScript, SQL \\
+    \textbf{Interfaces for Agents:} Model Context Protocol (MCP), LLM tool integration, Cloudflare Workers, Hono, REST APIs \\
+    \textbf{Infrastructure for Developers:} distributed systems, WebSockets, JWT authentication, system design, Docker, CI/CD, Git \\
+    \textbf{Systems that Learn:} PyTorch, TensorFlow, transformers, RAG, vector databases, OpenCV, CUDA \\
+    \textbf{Data \& Platforms:} Supabase, PostgreSQL, Pandas, asynchronous processing}}
 \end{itemize}
 
 
