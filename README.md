@@ -1,4 +1,4 @@
-# Resume LaTeX Build Pipeline
+# Resume LaTeX Build Workflow
 
 This repository stores resume source in LaTeX and automatically builds and commits a PDF whenever `src/main.tex` changes on `main`.
 
