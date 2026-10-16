@@ -97,9 +97,9 @@
 
 \resumeSubheading
     {\clickable{https://www.eventpin.com/}{EventPin, Inc.}}{Sept 2026 -- Jan 2027}
-    {Software Engineering Co-op}{Holland, OH}
+    {Software Engineering Intern}{Holland, OH}
     \resumeItemListStart
-        \resumeItem{Backend co-op building features and improving performance on a live event-discovery platform.}
+        \resumeItem{Backend intern building features and improving performance on a live event-discovery platform.}
     \resumeItemListEnd
 
 \resumeSubheading
@@ -123,27 +123,6 @@
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://github.com/Focus-Board}{FocusBoard - Whiteboard Task Capture System}}}
-  {\hfill\small\textcolor{Gray}{Kotlin, FastAPI, CRAFT, TrOCR, Phi-3 Mini, TFLite}}
-\resumeItemListStart
-  \resumeItem{Developed the Android app in Kotlin with ML Kit document scanning and an experimental on-device \textbf{YOLO/TFLite} whiteboard detector chosen for mobile size constraints.}
-  \resumeItem{Engineered a \textbf{3-stage OCR pipeline} using CRAFT for line segmentation, TrOCR for transcription, and Phi-3 Mini for structured calendar JSON generation from handwritten input.}
-  \resumeItem{Introduced per-device request queues to prevent race conditions under concurrent load. \textbf{In active use}.}
-\resumeItemListEnd
-
-
-\resumeProjectHeading
-  {\textbf{\clickable{https://github.com/Aneesh-382005/campus-compute}{Campus-Compute - Distributed Compute Framework}}}
-  {\hfill\small\textcolor{Gray}{Python, FastAPI, WebSockets, Docker}}
-\resumeItemListStart
-  \resumeItem{Created a LAN-distributed compute system with a centralized coordinator and worker nodes, with automatic discovery and reconnect.}
-  \resumeItem{Designed a capability-aware scheduler using CPU, RAM, and GPU metadata to place tasks across nodes.}
-  \resumeItem{Delivered a real-time WebSocket dashboard for cluster telemetry and job orchestration; \textbf{working prototype}.}
-\resumeItemListEnd
-
-
-
-\resumeProjectHeading
   {\textbf{\clickable{https://mcp.aneeshgrover.me/}{folio.mcp - Personal MCP Server}}}
   {\hfill\small\textcolor{Gray}{TypeScript, Cloudflare Workers, Hono, MCP SDK}}
 \resumeItemListStart
@@ -154,12 +133,32 @@
 
 
 \resumeProjectHeading
+  {\textbf{\clickable{https://github.com/Focus-Board}{FocusBoard - Whiteboard Task Capture System}}}
+  {\hfill\small\textcolor{Gray}{Kotlin, FastAPI, CRAFT, TrOCR, Phi-3 Mini, TFLite}}
+\resumeItemListStart
+  \resumeItem{Developed the Android app in Kotlin with ML Kit document scanning and an experimental on-device \textbf{YOLO/TFLite} whiteboard detector chosen for mobile size constraints.}
+  \resumeItem{Engineered a \textbf{3-stage OCR pipeline} using CRAFT for line segmentation, TrOCR for transcription, and Phi-3 Mini for structured calendar JSON generation from handwritten input.}
+  \resumeItem{Introduced per-device request queues to prevent race conditions under concurrent load.}
+\resumeItemListEnd
+
+
+\resumeProjectHeading
+  {\textbf{\clickable{https://github.com/Aneesh-382005/campus-compute}{Campus-Compute - Distributed Compute Framework}}}
+  {\hfill\small\textcolor{Gray}{Python, FastAPI, WebSockets, Docker}}
+\resumeItemListStart
+  \resumeItem{Created a LAN-distributed compute system with a centralized coordinator and worker nodes, with automatic discovery and reconnect.}
+  \resumeItem{Designed a capability-aware scheduler using CPU, RAM, and GPU metadata to place tasks across nodes.}
+  \resumeItem{Delivered a real-time WebSocket dashboard for cluster telemetry and job orchestration; \textbf{functional}.}
+\resumeItemListEnd
+
+
+\resumeProjectHeading
   {\textbf{\clickable{https://github.com/Aneesh-382005/Orbital}{Orbital - Cloud IDE Control Plane}}}%
   {\hfill\small\textcolor{Gray}{Go, Docker, JWT, REST APIs}}
 \resumeItemListStart
   \resumeItem{Architected a control plane in Go that provisions isolated VS Code workspaces on demand via a Dockerized provisioner.}
   \resumeItem{Implemented a reconciler loop to recover from provisioning failures without manual intervention.}
-  \resumeItem{Secured the API with JWT authentication and a layered package structure separating auth, storage, and orchestration. \textbf{Early-stage prototype}.}
+  \resumeItem{Secured the API with JWT authentication and a layered package structure separating auth, storage, and orchestration. \textbf{In active development}.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
