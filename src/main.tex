@@ -61,7 +61,7 @@
     \item
     \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-6.1pt}
 }
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
@@ -127,7 +127,7 @@
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://mcp.aneeshgrover.me/}{folio.mcp - Personal MCP Server}}}
+  {\textbf{\clickable{https://mcp.aneeshgrover.me/}{folio.mcp} - Personal MCP Server}}
   {\hfill\small\textcolor{Gray}{TypeScript, Cloudflare Workers, Hono, MCP SDK}}
 \resumeItemListStart
   \resumeItem{Deployed a remote MCP server on Cloudflare Workers exposing \textbf{4 tools} covering GitHub activity, portfolio data, and an LLM-invocable contact tool; \textbf{live in production}.}
@@ -137,7 +137,7 @@
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://github.com/Focus-Board}{FocusBoard - Whiteboard Task Capture System}}}
+  {\textbf{\clickable{https://github.com/Focus-Board}{FocusBoard} - Whiteboard Task Capture System}}
   {\hfill\small\textcolor{Gray}{Kotlin, FastAPI, CRAFT, TrOCR, Phi-3 Mini, TFLite}}
 \resumeItemListStart
   \resumeItem{Developed the Android app in Kotlin with ML Kit document scanning and an experimental on-device \textbf{YOLO/TFLite} whiteboard detector chosen for mobile size constraints.}
@@ -147,19 +147,19 @@
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://github.com/Aneesh-382005/Orbital}{Orbital - Cloud IDE Control Plane}}}%
+  {\textbf{\clickable{https://github.com/Aneesh-382005/Orbital}{Orbital} - Cloud Dev Environment Manager}}%
   {\hfill\small\textcolor{Gray}{Go, Docker, JWT, REST APIs}}
 \resumeItemListStart
-  \resumeItem{Built a Go control plane that provisions per-user VS Code workspaces on Docker and reconciles state every 30s so no container runs unaccounted for.}
+  \resumeItem{Built a Go control plane that provisions per-user VS Code workspaces on Docker and reconciles state every 30s.}
   \resumeItem{Benchmarked workspace startup time and found it took \textbf{35x longer} the first time vs. later runs; traced the slowdown to a redundant image check on every request.}
 \resumeItemListEnd
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://github.com/Aneesh-382005/AcademicAlly}{AcademicAlly}}}
+  {\textbf{\clickable{https://github.com/Aneesh-382005/AcademicAlly}{AcademicAlly}} (ACM Thapar Student Chapter)}
   {\hfill\small\textcolor{Gray}{React, Python, Pandas, BeautifulSoup}}
 \resumeItemListStart
-  \resumeItem{Built a responsive timetable portal serving \textbf{10,000+ students} for instant class schedule lookup across campus; adopted by ACM Thapar Society.}
+  \resumeItem{Built a responsive timetable portal for instant class schedule lookup: \textbf{10,000+ students}.}
   \resumeItem{Wrote ETL pipelines processing \textbf{50,000+ Excel rows} with custom error handling, reducing parsing failures by \textbf{95\%}.}
 \resumeItemListEnd
 
