@@ -16,8 +16,8 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{fontawesome5}
 \usepackage{multicol}
+\usepackage[normalem]{ulem}
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
@@ -46,6 +46,7 @@
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 \pdfgentounicode=1
+\renewcommand{\ULdepth}{1.2pt}
 
 % Custom commands
 \newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
@@ -66,11 +67,15 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-\newcommand{\linkicon}{\raisebox{-0.1em}{\faLink}}
 
-\newcommand{\clickable}[2]{%
-  \href{#1}{#2\ \linkicon}%
-}
+% ATS note: no icon glyphs anywhere in this document. FontAwesome5 icon
+% glyphs were tested (pdftotext extraction) and found to extract as garbage
+% characters interleaved with real text (e.g. contact line, link labels) on
+% every build path tried (CID/Identity-H and Type1 font embedding alike).
+% No documented pdflatex-compatible fix exists short of a LuaLaTeX toolchain
+% migration (see Lucid CV precedent). Plain text is the only verified-safe
+% option, so \clickable is just the label -- no trailing glyph.
+\newcommand{\clickable}[2]{\href{#1}{\uline{#2}}}
 
 
 %-------------------------------------------
@@ -81,10 +86,10 @@
 %----------HEADING----------
 \begin{center}
     {\Huge \scshape Aneesh Grover} \\ \vspace{1pt}
-    \href{mailto:agrover@rockets.utoledo.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{agrover@rockets.utoledo.edu}} ~ 
-    \href{https://www.linkedin.com/in/aneesh-grover/}{\raisebox{-0.2\height}\faLinkedin\ \underline{LinkedIn}} ~
-    \href{https://github.com/Aneesh-382005}{\raisebox{-0.2\height}\faGithub\ \underline{GitHub}} ~
-    \href{https://www.aneeshgrover.me/}{\raisebox{-0.2\height}\faGlobe\ \underline{Website}}
+    \href{mailto:agrover@rockets.utoledo.edu}{\uline{agrover@rockets.utoledo.edu}} ~
+    \href{https://www.linkedin.com/in/aneesh-grover/}{\uline{LinkedIn}} ~
+    \href{https://github.com/Aneesh-382005}{\uline{GitHub}} ~
+    \href{https://www.aneeshgrover.me/}{\uline{Website}}
 \end{center}
 
 
@@ -99,16 +104,15 @@
     {\clickable{https://www.eventpin.com/}{EventPin, Inc.}}{Sept 2026 -- Jan 2027}
     {Software Engineering Intern}{Holland, OH}
     \resumeItemListStart
-        \resumeItem{Backend intern building features and improving performance on a live event-discovery platform.}
+        \resumeItem{Rebuilt the event-scraping pipeline (Scrapy, Python) across 4 sources, cutting one week's events needing manual review from 116 to 22 by automating rules the team previously applied by hand.}
+        \resumeItem{Built an offline ZIP/state lookup (point-in-polygon on Census boundaries) that caught the upstream data source mislabeling \textbf{17\%} of events, with no external API calls.}
     \resumeItemListEnd
 
 \resumeSubheading
-    {\clickable{https://github.com/Aneesh-382005/AcademicAlly}{AcademicAlly}}{July 2024 -- August 2025}
-    {Developer -- ACM Thapar Society}{{\hfill\small\textcolor{Gray}{\textbf{React, Python, Pandas, BeautifulSoup}}}}
+    {University of Toledo Learning Enhancement Center}{Sept 2026 -- Present}
+    {Computer Science Tutor}{Toledo, OH}
     \resumeItemListStart
-        \resumeItem{Built a responsive timetable portal serving \textbf{10,000+ students} for instant class schedule lookup across campus.}
-        \resumeItem{Wrote ETL pipelines processing \textbf{50,000+ Excel rows} with custom error handling, reducing parsing failures by \textbf{95\%}.}
-        \resumeItem{Deployed and maintained the portal through its \textbf{\href{https://github.com/Aneesh-382005/AcademicAlly}{live run}}.}
+        \resumeItem{Course tutor for Non-Linear Data Structures, Software Engineering, and DBMS.}
     \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -128,7 +132,7 @@
 \resumeItemListStart
   \resumeItem{Deployed a remote MCP server on Cloudflare Workers exposing \textbf{4 tools} covering GitHub activity, portfolio data, and an LLM-invocable contact tool; \textbf{live in production}.}
   \resumeItem{Configured a KV layer for GitHub response caching with TTLs and IP-based rate limiting on the contact tool to prevent abuse.}
-  \resumeItem{Shipped a companion frontend at \textbf{\clickable{https://mcp.aneeshgrover.me/}{mcp.aneeshgrover.me}} with dynamic tool discovery; automated deploys via GitHub Actions.}
+  \resumeItem{Shipped a companion frontend at \textbf{\clickable{https://mcp.aneeshgrover.me/}{mcp.aneeshgrover.me}} with dynamic tool discovery, backed by tests covering cache revalidation and rate-limit enforcement.}
 \resumeItemListEnd
 
 
@@ -143,26 +147,48 @@
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://github.com/Aneesh-382005/campus-compute}{Campus-Compute - Distributed Compute Framework}}}
-  {\hfill\small\textcolor{Gray}{Python, FastAPI, WebSockets, Docker}}
+  {\textbf{\clickable{https://github.com/Aneesh-382005/Orbital}{Orbital - Cloud IDE Control Plane}}}%
+  {\hfill\small\textcolor{Gray}{Go, Docker, JWT, REST APIs}}
 \resumeItemListStart
-  \resumeItem{Created a LAN-distributed compute system with a centralized coordinator and worker nodes, with automatic discovery and reconnect.}
-  \resumeItem{Designed a capability-aware scheduler using CPU, RAM, and GPU metadata to place tasks across nodes.}
-  \resumeItem{Delivered a real-time WebSocket dashboard for cluster telemetry and job orchestration; \textbf{functional}.}
+  \resumeItem{Built a Go control plane that provisions per-user VS Code workspaces on Docker and reconciles state every 30s so no container runs unaccounted for.}
+  \resumeItem{Benchmarked workspace startup time and found it took \textbf{35x longer} the first time vs. later runs; traced the slowdown to a redundant image check on every request.}
 \resumeItemListEnd
 
 
 \resumeProjectHeading
-  {\textbf{\clickable{https://github.com/Aneesh-382005/Orbital}{Orbital - Cloud IDE Control Plane}}}%
-  {\hfill\small\textcolor{Gray}{Go, Docker, JWT, REST APIs}}
+  {\textbf{\clickable{https://github.com/Aneesh-382005/AcademicAlly}{AcademicAlly}}}
+  {\hfill\small\textcolor{Gray}{React, Python, Pandas, BeautifulSoup}}
 \resumeItemListStart
-  \resumeItem{Architected a control plane in Go that provisions isolated VS Code workspaces on demand via a Dockerized provisioner.}
-  \resumeItem{Implemented a reconciler loop to recover from provisioning failures without manual intervention.}
-  \resumeItem{Secured the API with JWT authentication and a layered package structure separating auth, storage, and orchestration. \textbf{In active development}.}
+  \resumeItem{Built a responsive timetable portal serving \textbf{10,000+ students} for instant class schedule lookup across campus; adopted by ACM Thapar Society.}
+  \resumeItem{Wrote ETL pipelines processing \textbf{50,000+ Excel rows} with custom error handling, reducing parsing failures by \textbf{95\%}.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
+
+
+%-----------CONTRIBUTIONS & INVOLVEMENT-----------
+\section{Contributions \& Involvement}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+  {\textbf{Open Source Contributions}}
+  {\hfill\small\textcolor{Gray}{Rust, TypeScript}}
+\resumeItemListStart
+  \resumeItem{Designed and shipped \textbf{\clickable{https://github.com/rust-lang/rustup/pull/4986}{\texttt{rustup doc --serve}}} to \textbf{rust-lang/rustup}, fixing sandboxed-browser \texttt{file://} doc-access failures; merged after maintainer review.}
+  \resumeItem{Fixed a model-validation bypass in an open-source AI coding CLI (\textbf{\clickable{https://github.com/ultraworkers/claw-code/pull/3271}{merged PR}}), closing a gap routing local model names to paid APIs.}
+\resumeItemListEnd
+
+\resumeSubheading
+  {Association for Computing Machinery (ACM), Thapar Chapter}{Nov 2023 -- May 2025}
+  {Executive Board Member \& Machine Learning Bootcamp Lead}{}
+
+  \resumeItemListStart
+    \resumeItem{Organized Hacklipse 2024, ACM Thapar's hackathon, for \textbf{300+ participants}.}
+    \resumeItem{Led ACM's Machine Learning Bootcamp curriculum, mentoring \textbf{100+ students} weekly.}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
 
 
 %-----------SKILLS-----------
@@ -174,7 +200,6 @@
     \textbf{Languages:} Python, Go, Java, C++, JavaScript, TypeScript, SQL \\
     \textbf{Interfaces for Agents:} Model Context Protocol (MCP), LLM tool integration, Cloudflare Workers, Hono, REST APIs \\
     \textbf{Infrastructure for Developers:} distributed systems, WebSockets, JWT authentication, system design, Docker, CI/CD, Git \\
-    \textbf{Systems that Learn:} PyTorch, TensorFlow, transformers, RAG, vector databases, OpenCV, CUDA \\
     \textbf{Data \& Platforms:} Supabase, PostgreSQL, Pandas}}
 \end{itemize}
 
@@ -190,39 +215,13 @@
 
 \resumeSubHeadingListEnd
 
-%-----------LEADERSHIP & INVOLVEMENT-----------
-\section{Leadership \& Involvement}
-\resumeSubHeadingListStart
-
-\resumeSubheading
-  {University of Toledo Learning Enhancement Center}{Sept 2026 -- Present}
-  {Computer Science Tutor}{Toledo, OH}
-
-  \resumeItemListStart
-    \resumeItem{Course tutor for Non-Linear Data Structures, Software Engineering, and DBMS.}
-  \resumeItemListEnd
-
-\resumeSubheading
-  {Association for Computing Machinery (ACM), Thapar Chapter}{Nov 2023 -- May 2025}
-  {Executive Board Member \& Machine Learning Bootcamp Lead}{}
-
-  \resumeItemListStart
-    \resumeItem{Organized Hacklipse 2024, ACM Thapar's hackathon, for \textbf{300+ participants}.}
-    \resumeItem{Led ACM's Machine Learning Bootcamp curriculum, mentoring \textbf{100+ students} weekly.}
-  \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
 %-----------ACHIEVEMENTS-----------
 \section{Achievements}
   \resumeItemListStart
-    \resumeItem{ Secured \textbf{runner-up} in \textbf{Open Innovation Category} at \textbf{NVIDIA's SatHack}, competing against \textbf{1500+ participants}.}
-    \resumeItem{Awarded Best Use Case for AcademicAlly at ACM Projectathon 2024.}
+    \resumeItem{\textbf{Runner-up}, NVIDIA SatHack Open Innovation (\textbf{1500+} entrants) \textbf{|} Best Use Case, ACM Projectathon 2024.}
   \resumeItemListEnd
 
 
 
 
 \end{document}
-
-
